@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Día de la Madre</title>
+  <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <section class="portada">
+    <img src="imagenes mon/fotofondo.jpg" alt="Foto de ejemplo" />
+    <h1>Gracias por cada momento que nos has regalado, Mamá ❤️</h1>
+    <button onclick="scrollToSeccion('linea-tiempo')">Ver línea de tiempo</button>
+  </section>
+
+  <section id="linea-tiempo" class="linea-tiempo">
+  <h2>Línea de Tiempo de Recuerdos</h2>
+  <div class="timeline">
+    
+    <div class="timeline-event izquierda" data-aos="fade-right">
+      <div class="card">
+        <img src="imagenes mon/casamiento.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Tu sonrisa me enseñó que el amor empieza en casa.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event derecha" data-aos="fade-left">
+      <div class="card">
+        <img src="imagenes mon/todos.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>ese dia siempre lo tendre en mi corazon, porque estuvo lleno de emocion</p>
+      </div>
+    </div>
+
+    <div class="timeline-event izquierda" data-aos="fade-right">
+      <div class="card">
+        <img src="imagenes mon/464916402_8686457564730510_4569143847936750860_n.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Un hermoso viaje que hicimos cuando era pequeño.  Fue uno de esos momentos que se quedan en el corazón para siempre.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event derecha" data-aos="fade-left">
+      <div class="card">
+        <img src="imagenes mon/madres.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Esta imagen representa el amor entre generaciones. Mamá y abuela, juntas, son el reflejo de fuerza, ternura y sabiduría. Gracias por enseñarme lo que significa el verdadero amor familiar.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event izquierda" data-aos="fade-right">
+      <div class="card">
+        <img src="imagenes mon/IMG_9116.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Rodeado de todos los que amo, Las risas, los abrazos, las historias compartidas no sabemos que estos son momentos que se vuelven eternos en nuestra memoria.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event derecha" data-aos="fade-left">
+      <div class="card">
+        <img src="imagenes mon/IMG_9524.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Pasar la navidad todos juntos, uno de los mejores regalo que puedo tener</p>
+      </div>
+    </div>
+
+    <div class="timeline-event izquierda" data-aos="fade-up">
+      <div class="card">
+        <img src="imagenes mon/IMG_0421.jpg" alt="Viaje a la playa" class="evento-img">
+        <h3></h3>
+        <p>Y por ultimo nuestro ultimo viaje que hicimos todos como familia, Hoy te doy este pequeño regalo, como símbolo de todo lo que significas para mí.</p>
+      </div>
+    </div>
+
+  </div>
+    </section>
+
+
+  <section class="bingo">
+    <h2>🎁Cupones de Recompensas</h2>
+    <div class="tablero">
+      <div class="casilla" onclick="marcar(this)">Desayuno elaborado por nosotros</div>
+      <div class="casilla" onclick="marcar(this)">1 postre favorito preparado por mí</div>
+      <div class="casilla" onclick="marcar(this)">Tarde de peliculas en familia</div>
+      <div class="casilla" onclick="marcar(this)">1 día libre de tareas del hogar</div>
+      <div class="casilla" onclick="marcar(this)">Desayuno en la cama</div>
+      <div class="casilla" onclick="marcar(this)">Una carta sorpresa</div>
+      <div class="casilla" onclick="marcar(this)">Día de spa en casa</div>
+      <div class="casilla" onclick="marcar(this)">Cupon para reutilizar otro cupon</div>
+      <div class="casilla" onclick="marcar(this)">Lo que usted quiera pedir</div>
+      
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

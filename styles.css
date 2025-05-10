@@ -1,0 +1,255 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fffaf5;
+  color: #3a2e2e;
+}
+
+.foto-familiar{
+  width: 100%;
+  background-image: none;
+}
+
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+.portada {
+    position: relative; /* necesario para el pseudo-elemento */
+    background-color: #ffeae0;
+    padding: 100px 20px 60px 20px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    overflow: hidden; /* para evitar que el blur sobresalga */
+    z-index: 0;
+}
+/* Oscurecimiento encima de la imagen */
+.portada::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background-image: url("imagenes mon/fotofondo.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transform: scale(1.1); /* escala un poco para evitar bordes visibles al difuminar */
+    z-index: -1; /* colocar detrás del contenido */
+}
+.portada > * {
+    position: relative;
+    z-index: 1;
+}
+  /* Ejemplo de un título que queda sobre el fondo difuminado */
+.portada h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+}
+  /* Ejemplo de imagen dentro de portada, sin difuminado */
+.portada img {
+    max-width: 400px; /* reducir tamaño máximo a 300px ancho */
+    width: 100%; /* ancho relativo para responsividad */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.portada h1 {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+.portada button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  background-color: #f06292;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.portada button:hover {
+  background-color: #ec407a;
+}
+
+.portada .foto-familiar {
+  width: 200px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.portada button {
+  background-color: #d9786f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.linea-tiempo h2 {
+  margin-bottom: 30px;
+}
+
+.evento {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 800px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.evento img {
+  width: 150px;
+  border-radius: 12px;
+}
+
+.evento div {
+  text-align: left;
+  max-width: 600px;
+}
+
+.bingo {
+  background: #fff0f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.bingo h2 {
+  font-size: 2rem;
+  color: #e57373;
+  margin-bottom: 10px;
+}
+
+.bingo-subtitulo {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.casilla {
+  background: #ffe6e6;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.casilla:hover {
+  background-color: #ffcfcf;
+  transform: scale(1.03);
+}
+
+.casilla.marcado {
+  background-color: #d1ffd1;
+  color: #2e7d32;
+  text-decoration: line-through;
+  position: relative;
+}
+
+.casilla.marcado::after {
+  content: "✔";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #2e7d32;
+}
+
+.linea-tiempo {
+  background: #fff5f0;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #ffc6b3;
+  transform: translateX(-50%);
+}
+
+.timeline-event {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-event.izquierda {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-event.derecha {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-event .card {
+  background: #ffe6dd;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-event::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ffb59e;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  top: 25px;
+  z-index: 1;
+}
+
+.evento-img{
+  width: 100%;
+}
+
+.timeline-event.izquierda::after {
+  right: -8px;
+}
+
+.timeline-event.derecha::after {
+  left: -8px;
+}
