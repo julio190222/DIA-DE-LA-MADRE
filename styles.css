@@ -21,39 +21,39 @@ p{
 }
 
 .portada {
-    position: relative; /* necesario para el pseudo-elemento */
+    position: relative; 
     background-color: #ffeae0;
     padding: 100px 20px 60px 20px;
     color: white;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-    overflow: hidden; /* para evitar que el blur sobresalga */
+    overflow: hidden; 
     z-index: 0;
 }
-/* Oscurecimiento encima de la imagen */
+
 .portada::before {
     content: "";
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    inset: 0; 
     background-image: url("imagenes mon/fotofondo.jpg");
     background-size: cover;
     background-position: center;
     filter: blur(8px);
-    transform: scale(1.1); /* escala un poco para evitar bordes visibles al difuminar */
-    z-index: -1; /* colocar detrás del contenido */
+    transform: scale(1.1); 
+    z-index: -1; 
 }
 .portada > * {
     position: relative;
     z-index: 1;
 }
-  /* Ejemplo de un título que queda sobre el fondo difuminado */
+
 .portada h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5em;
 }
-  /* Ejemplo de imagen dentro de portada, sin difuminado */
+
 .portada img {
-    max-width: 400px; /* reducir tamaño máximo a 300px ancho */
-    width: 100%; /* ancho relativo para responsividad */
+    max-width: 400px; 
+    width: 100%; 
     height: auto;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -252,4 +252,156 @@ p{
 
 .timeline-event.derecha::after {
   left: -8px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  section {
+    padding: 30px 15px;
+  }
+  
+  .portada {
+    padding: 60px 15px 40px;
+  }
+  
+  .portada h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .portada img {
+    max-width: 300px;
+  }
+  
+  .portada button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .linea-tiempo {
+    padding: 40px 15px;
+  }
+  
+  .linea-tiempo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .timeline::before {
+    left: 30px;
+    width: 3px;
+  }
+  
+  .timeline-event {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-event.izquierda, 
+  .timeline-event.derecha {
+    left: 0;
+    text-align: left;
+  }
+  
+  .timeline-event.izquierda::after,
+  .timeline-event.derecha::after {
+    left: 22px;
+    right: auto;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .timeline-event .card {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-event .card::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #ffe6dd;
+  }
+  
+  /* Ajustes para los eventos */
+  .evento {
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px auto;
+  }
+  
+  .evento img {
+    width: 140px;
+  }
+  
+  .evento div {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .evento-img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .bingo {
+    padding: 40px 15px;
+  }
+  
+  .bingo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .tablero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .casilla {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    min-height: 80px;
+  }
+  
+  .casilla.marcado::after {
+    font-size: 1.3rem;
+    top: 8px;
+    right: 10px;
+  }
+  
+}
+
+@media (max-width: 360px) {
+  .portada h1 {
+    font-size: 1.5rem;
+  }
+  
+  .tablero {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-event {
+    padding-left: 50px;
+  }
+  
+  .timeline::before {
+    left: 25px;
+  }
+  
+  .timeline-event.izquierda::after,
+  .timeline-event.derecha::after {
+    left: 17px;
+  }
 }
